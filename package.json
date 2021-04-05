@@ -1,0 +1,44 @@
+{
+  "name": "beer-info-bot",
+  "version": "1.0.0",
+  "description": "A bot to get info on beers",
+  "main": "src/main.js",
+  "repository": "git@github.com:gfoiani/beer-info-bot.git",
+  "author": "Giovanni Foiani <giovanni.foiani@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 14.16 <15"
+  },
+  "devDependencies": {
+    "@types/jest": "26.0.22",
+    "@types/node": "14.14.37",
+    "@typescript-eslint/eslint-plugin": "4.20.0",
+    "@typescript-eslint/parser": "4.20.0",
+    "eslint": "7.23.0",
+    "eslint-config-prettier": "8.1.0",
+    "eslint-plugin-jest": "24.3.4",
+    "jest": "26.6.3",
+    "prettier": "2.2.1",
+    "rimraf": "3.0.2",
+    "ts-jest": "26.5.4",
+    "ts-node": "9.1.1",
+    "tsutils": "3.21.0",
+    "typescript": "4.2.3"
+  },
+  "scripts": {
+    "start:dev": "ts-node src/main.ts",
+    "start": "node build/src/main.js",
+    "clean": "rimraf coverage build tmp",
+    "build": "tsc -p tsconfig.release.json",
+    "build:watch": "tsc -w -p tsconfig.release.json",
+    "lint": "eslint . --ext .ts,.tsx",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "dependencies": {
+    "tslib": "2.1.0"
+  },
+  "volta": {
+    "node": "14.16.0"
+  }
+}
