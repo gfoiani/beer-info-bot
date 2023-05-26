@@ -2,14 +2,24 @@ service: beer-info-bot
 
 frameworkVersion: "3"
 
+useDotenv: true,
+
+package:
+  excludeDevDependencies: true
+
 provider:
   name: aws
   runtime: nodejs18.x
+  environment:
+
+plugins:
+  - serverless-plugin-typescript
+	-	serverless-dotenv-plugin
 
 functions:
-  webhook:
-    handler: handler.webhook
+  echo:
+    handler: handler.beerBot
     events:
-      - http:
-          path: webhook
+      - httpApi:
+          path: echo
           method: post
